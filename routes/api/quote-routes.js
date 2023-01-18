@@ -13,4 +13,18 @@ router.get('/dailyList', (req, res) => {
     });
 });
 
+router.get('/:quoteId', (req, res) => {
+  Quote.findByPk(req.params.quoteId)
+    .then(dbQuoteData => res.json(dbQuoteData))
+    .catch(err => {
+      console.log(err);
+      res.status(500).json(err);
+    });
+});
+
+// TODO: update quotes based on ieX
+
+
 module.exports = router;
+
+

@@ -1,7 +1,13 @@
 // import all models
 const Quote = require('./Quote');
 const Trader = require('./Trader');
+const AccountTransaction = require('./AccountTransaction')
 
-// associations if needed
+Trader.hasMany(AccountTransaction, {
+	foreignKey: 'trader_id'
+      });
+      AccountTransaction.belongsTo(Trader, {
+	foreignKey: 'trader_id'
+      });
 
-module.exports = { Trader, Quote };
+module.exports = { Trader, Quote, AccountTransaction };

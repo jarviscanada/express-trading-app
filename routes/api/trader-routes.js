@@ -43,5 +43,7 @@ router.delete('/:traderId', (req, res) => {
     });
 });
 
+// TODO: deposit funds
+// TODO: withdraw funds
 
 module.exports = router;
